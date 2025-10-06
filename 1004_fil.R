@@ -122,5 +122,6 @@ library(chorddiag)
 fiber_names <- matrice_links$from
 m <- as.matrix(matrice_links[, -1])
 
-dim(m)
-chorddiag()
+dimnames(m) <- list(have = fiber_names,
+                    prefer = fiber_names)
+chorddiag(m, palette = "Pastel2")
